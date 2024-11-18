@@ -1,10 +1,10 @@
 const BodyComposition = () => {
     return (
-        <section className="h-screen bg-gray-200 flex items-center justify-center">
+        <section className="h-screen bg-bgColor flex items-center justify-center">
             <div className="text-center">
-                <h1 className="text-3xl font-bold">Body Composition</h1>
-                <p className="mt-4 text-lg text-gray-700">
-                    Exciting things are on the way! This feature will be live soon to enhance your experience.
+                <h1 className="text-3xl font-bold text-primary">Body Composition</h1>
+                <p className="mt-4 text-lg text-textColor">
+                    내 몸을 더 잘 이해하는 시간! 🧘 체성분 상담 기능이 곧 추가됩니다! 🔥
                 </p>
             </div>
         </section>

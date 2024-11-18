@@ -9,9 +9,7 @@ function App() {
     <Router>
       <VisitorLogger />
       <Header />
-      <main className="mt-16">
-        <RouterConfig />
-      </main>
+      <RouterConfig />
     </Router>
   );
 }

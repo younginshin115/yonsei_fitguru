@@ -22,7 +22,7 @@ const Contact = () => {
         setMessage({ type: '', content: '' });
 
         if (!validateEmail(email)) {
-            setMessage({ type: 'error', content: 'Please provide a valid email address.' });
+            setMessage({ type: 'error', content: '이메일이 유효하지 않아요! 😅' });
             return;
         }
 
@@ -36,13 +36,13 @@ const Contact = () => {
             });
 
             await axios.get(
-                `${process.env.REACT_APP_ADDR_SCRIPT}?action=insert&table=feedback&data=${encodeURIComponent(finalData)}`
+                `${process.env.REACT_APP_ADDR_SCRIPT}?action=insert&table=tab_final&data=${encodeURIComponent(finalData)}`
             );
 
-            setMessage({ type: 'success', content: 'Thank you! Your submission has been received.' });
+            setMessage({ type: 'success', content: '우와! 제출이 완료됐어요! 🙌 감사합니다!' });
             setFormData({ email: '', advice: '' });
         } catch (error) {
-            setMessage({ type: 'error', content: 'There was an issue submitting your information. Please try again later.' });
+            setMessage({ type: 'error', content: '어머, 문제가 생겼어요! 😢 나중에 다시 시도해주세요.' });
             console.error('Submission error:', error);
         } finally {
             setLoading(false);
@@ -50,42 +50,39 @@ const Contact = () => {
     };
 
     return (
-        <section className="h-screen bg-gray-100 flex items-center justify-center">
-            <div className="text-center bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-                <h2 className="text-2xl font-semibold mb-4">Stay Updated</h2>
-                <p className="mb-4 text-gray-600">
-                    Leave your email to receive notifications when our service launches.
-                </p>
+        <section className="h-screen bg-bgColor flex items-center justify-center">
+            <div className="text-center p-8 bg-white rounded-lg shadow-xl max-w-lg w-full border border-primary">
+                <h2 className="text-3xl font-extrabold text-primary mb-4">문의하기</h2>
+                <p className="text-lg text-textColor mb-6">궁금한 점이나 건의사항이 있다면 편하게 남겨주세요!</p>
+
                 <input
                     id="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="이메일을 입력해주세요 ✨"
                     value={formData.email}
                     onChange={handleChange}
-                    className="border p-2 w-full mb-4 rounded"
+                    className="border p-2 w-full mb-4 rounded border-primary"
                 />
 
-                <h3 className="text-xl font-semibold mb-2">We value your feedback</h3>
-                <p className="mb-4 text-gray-600">Tell us how we can improve our service.</p>
+                <h3 className="text-xl font-semibold text-primary mb-2">피드백</h3>
                 <textarea
                     id="advice"
-                    placeholder="Leave your feedback"
+                    placeholder="여기에 피드백을 입력하세요 📝"
                     value={formData.advice}
                     onChange={handleChange}
-                    className="border p-2 w-full mb-4 rounded"
+                    className="border p-2 w-full mb-4 rounded border-primary"
                 ></textarea>
 
                 <button
                     onClick={handleSubmit}
-                    className={`w-full p-2 rounded text-white flex justify-center items-center space-x-2 ${loading ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'
-                        }`}
+                    className={`w-full p-2 rounded text-bgColor flex justify-center items-center space-x-2 ${loading ? 'bg-gradient-to-r from-primary to-accent cursor-not-allowed' : 'bg-gradient-to-r from-primary to-accent hover:bg-blue-600'}`}
                     disabled={loading}
                 >
                     {loading ? (
                         <>
-                            <span>Submitting...</span>
+                            <span>제출 중...</span>
                             <svg
-                                className="animate-spin h-5 w-5 text-white"
+                                className="animate-spin h-5 w-5 text-bgColor"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -106,7 +103,7 @@ const Contact = () => {
                             </svg>
                         </>
                     ) : (
-                        'Submit'
+                        '제출하기 🚀'
                     )}
                 </button>
 

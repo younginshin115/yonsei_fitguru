@@ -15,14 +15,14 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="bg-white shadow-md fixed w-full z-10">
+        <header className="bg-bgColor shadow-md fixed w-full z-10 lg:h-24 content-end">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
                 <div className="text-2xl font-bold text-gray-800">FitGuru</div>
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex space-x-6">
                     {menuItems.map((item) => (
-                        <Link key={item.path} to={item.path} className="text-gray-600 hover:text-blue-500 flex items-center space-x-2">
+                        <Link key={item.path} to={item.path} className="text-gray-600 hover:text-primary flex items-center space-x-2">
                             <FontAwesomeIcon icon={item.icon} />
                             <span>{item.label}</span>
                         </Link>
