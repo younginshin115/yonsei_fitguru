@@ -36,7 +36,7 @@ const Contact = () => {
             });
 
             await axios.get(
-                `${process.env.REACT_APP_ADDR_SCRIPT}?action=insert&table=tab_final&data=${encodeURIComponent(finalData)}`
+                `${process.env.REACT_APP_ADDR_SCRIPT}?action=insert&table=feedback&data=${encodeURIComponent(finalData)}`
             );
 
             setMessage({ type: 'success', content: '우와! 제출이 완료됐어요! 🙌 감사합니다!' });
@@ -52,22 +52,22 @@ const Contact = () => {
     return (
         <section className="h-screen bg-bgColor flex items-center justify-center">
             <div className="text-center p-8 bg-white rounded-lg shadow-xl max-w-lg w-full border border-primary">
-                <h2 className="text-3xl font-extrabold text-primary mb-4">문의하기</h2>
-                <p className="text-lg text-textColor mb-6">궁금한 점이나 건의사항이 있다면 편하게 남겨주세요!</p>
+                <h2 className="text-3xl font-extrabold text-primary mb-6">알림 받기</h2>
+                <p className="text-textColor mb-4 text-left">서비스 런칭 시 알림을 받으실 이메일을 남겨주세요! 📧</p>
 
                 <input
                     id="email"
                     type="email"
-                    placeholder="이메일을 입력해주세요 ✨"
+                    placeholder="이메일을 입력해주세요"
                     value={formData.email}
                     onChange={handleChange}
                     className="border p-2 w-full mb-4 rounded border-primary"
                 />
 
-                <h3 className="text-xl font-semibold text-primary mb-2">피드백</h3>
+                <h3 className="text-textColor mb-4 text-left">서비스에 대한 의견이나 조언을 남겨주세요! 💡</h3>
                 <textarea
                     id="advice"
-                    placeholder="여기에 피드백을 입력하세요 📝"
+                    placeholder="서비스에 대한 조언을 남겨주세요"
                     value={formData.advice}
                     onChange={handleChange}
                     className="border p-2 w-full mb-4 rounded border-primary"
