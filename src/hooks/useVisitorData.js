@@ -14,7 +14,7 @@ const setCookieValue = (name, value, days) => {
     document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 };
 
-const getUVfromCookie = () => {
+export const getUVfromCookie = () => {
     const hash = Math.random().toString(36).substring(2, 8).toUpperCase();
     const existingHash = getCookieValue("user");
     if (!existingHash) {
