@@ -13,7 +13,7 @@ const Overview = () => {
                 </p>
 
                 {/* 주요 기능 섹션 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                     {/* 운동 기록 */}
                     <div className="bg-white shadow-lg rounded-lg p-6 hover:scale-105 transition-transform border border-primary">
                         <h2 className="text-xl font-semibold text-primary mb-4">운동 기록</h2>
