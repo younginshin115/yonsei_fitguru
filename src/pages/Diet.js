@@ -1,10 +1,10 @@
 const Diet = () => {
     return (
-        <section className="h-screen bg-gray-200 flex items-center justify-center">
+        <section className="h-screen bg-bgColor flex items-center justify-center">
             <div className="text-center">
-                <h1 className="text-3xl font-bold">Diet</h1>
-                <p className="mt-4 text-lg text-gray-700">
-                    Exciting things are on the way! This feature will be live soon to enhance your experience.
+                <h1 className="text-3xl font-bold text-primary">Diet</h1>
+                <p className="mt-4 text-lg text-textColor">
+                    맛있고 건강한 선택이 곧 추가됩니다! 🍏 곧 더 스마트한 식단 관리가 가능해져요! 🥑
                 </p>
             </div>
         </section>
