@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { format, addWeeks, subWeeks, startOfWeek, endOfWeek } from 'date-fns';
 import toast, { Toaster } from 'react-hot-toast';
 
-const WorkoutNavigator = () => {
-    const [currentDate, setCurrentDate] = useState(new Date());
+const WeekSelector = ({ currentDate, setCurrentDate }) => {
     const [view, setView] = useState('weekly'); // 현재 선택된 뷰 (주간: 'weekly', 월간: 'monthly')
 
     const getWeekRange = (date) => {
@@ -37,22 +36,22 @@ const WorkoutNavigator = () => {
                 {/* 월간 뷰 버튼 */}
                 <button
                     onClick={handleMonthlyView}
-                    className={`border border-rightGray rounded-l-full p-2 px-4 font-semibold transition ${view === 'monthly'
+                    className={`border border-rightGray rounded-l-full p-2 pl-4 font-semibold transition ${view === 'monthly'
                         ? 'border-primary bg-primary text-bgColor'
                         : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-bgColor hover:border-primary'
                         }`}
                 >
-                    Monthly
+                    월간 보기
                 </button>
                 {/* 주간 뷰 버튼 */}
                 <button
                     onClick={handleWeeklyView}
-                    className={`border rounded-r-full p-2 px-4 font-semibold transition ${view === 'weekly'
+                    className={`border rounded-r-full p-2 pr-4 font-semibold transition ${view === 'weekly'
                         ? 'border-primary bg-primary text-bgColor'
                         : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-bgColor hover:border-primary'
                         }`}
                 >
-                    Weekly
+                    주간 보기
                 </button>
             </div>
             {/* 주간 선택기 */}
@@ -86,4 +85,4 @@ const WorkoutNavigator = () => {
     );
 };
 
-export default WorkoutNavigator;
+export default WeekSelector;
