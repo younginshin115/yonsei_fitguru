@@ -36,8 +36,6 @@ const WeeklyDataFetcher = ({ currentDate }) => {
                 const jsonEnd = jsonpResponse.lastIndexOf(')');
                 const jsonData = JSON.parse(jsonpResponse.substring(jsonStart, jsonEnd));
 
-                console.log(jsonData);
-
                 if (jsonData.success) {
                     const userId = getUVfromCookie();
                     const filteredData = jsonData.data.filter((e) => {
