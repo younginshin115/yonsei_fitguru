@@ -28,7 +28,7 @@ const WeekSelector = ({ currentDate, setCurrentDate }) => {
     const handleWeeklyView = () => setView('weekly');
 
     return (
-        <section className="flex justify-between bg-gray-100">
+        <section className="flex justify-between bg-white">
             {/* Toast Container */}
             <Toaster />
 
@@ -37,8 +37,8 @@ const WeekSelector = ({ currentDate, setCurrentDate }) => {
                 <button
                     onClick={handleMonthlyView}
                     className={`border border-rightGray rounded-l-full p-2 pl-4 font-semibold transition ${view === 'monthly'
-                        ? 'border-primary bg-primary text-bgColor'
-                        : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-bgColor hover:border-primary'
+                        ? 'border-primary bg-primary text-white'
+                        : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-white hover:border-primary'
                         }`}
                 >
                     월간 보기
@@ -47,8 +47,8 @@ const WeekSelector = ({ currentDate, setCurrentDate }) => {
                 <button
                     onClick={handleWeeklyView}
                     className={`border rounded-r-full p-2 pr-4 font-semibold transition ${view === 'weekly'
-                        ? 'border-primary bg-primary text-bgColor'
-                        : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-bgColor hover:border-primary'
+                        ? 'border-primary bg-primary text-white'
+                        : 'border-rightGray bg-white text-textColor hover:bg-primary hover:text-white hover:border-primary'
                         }`}
                 >
                     주간 보기
@@ -72,11 +72,11 @@ const WeekSelector = ({ currentDate, setCurrentDate }) => {
                     ▶
                 </button>
             </div>
-            <div>
+            <div className='p-2'>
                 {/* 이번 주 버튼 */}
                 <button
                     onClick={handleThisWeek}
-                    className="border border-rightGray rounded-full p-2 px-4 bg-gray-100 text-textColor hover:text-bgColor font-semibold hover:bg-primary hover:border-primary transition"
+                    className="border border-rightGray rounded-full p-2 px-4 bg-white text-textColor hover:text-white font-semibold hover:bg-primary hover:border-primary transition"
                 >
                     이번 주
                 </button>

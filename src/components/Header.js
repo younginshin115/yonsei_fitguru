@@ -15,7 +15,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="bg-bgColor shadow-md fixed w-full z-10 lg:h-24 content-end">
+        <header className="bg-white shadow-md fixed w-full z-10 lg:h-24 content-end">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
                 <div className="text-2xl font-bold text-gray-800">FitGuru</div>
 

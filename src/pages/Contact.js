@@ -50,7 +50,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="h-screen bg-bgColor flex items-center justify-center">
+        <section className="h-screen bg-white flex items-center justify-center">
             <div className="text-center p-8 bg-white rounded-lg shadow-xl max-w-lg w-full border border-primary">
                 <h2 className="text-3xl font-extrabold text-primary mb-6">알림 받기</h2>
                 <p className="text-textColor mb-4 text-left">서비스 런칭 시 알림을 받으실 이메일을 남겨주세요! 📧</p>
@@ -75,14 +75,14 @@ const Contact = () => {
 
                 <button
                     onClick={handleSubmit}
-                    className={`w-full p-2 rounded text-bgColor flex justify-center items-center space-x-2 ${loading ? 'bg-gradient-to-r from-primary to-accent cursor-not-allowed' : 'bg-gradient-to-r from-primary to-accent hover:bg-blue-600'}`}
+                    className={`w-full p-2 rounded text-white flex justify-center items-center space-x-2 ${loading ? 'bg-gradient-to-r from-primary to-accent cursor-not-allowed' : 'bg-gradient-to-r from-primary to-accent hover:bg-blue-600'}`}
                     disabled={loading}
                 >
                     {loading ? (
                         <>
                             <span>제출 중...</span>
                             <svg
-                                className="animate-spin h-5 w-5 text-bgColor"
+                                className="animate-spin h-5 w-5 text-white"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"

@@ -1,6 +1,6 @@
 const Diet = () => {
     return (
-        <section className="h-screen bg-bgColor flex items-center justify-center">
+        <section className="h-screen bg-white flex items-center justify-center">
             <div className="text-center">
                 <h1 className="text-3xl font-bold text-primary">Diet</h1>
                 <p className="mt-4 text-lg text-textColor">

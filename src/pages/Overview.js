@@ -4,7 +4,7 @@ const Overview = () => {
     const navigate = useNavigate(); // 페이지 이동을 위한 useNavigate 훅 사용
 
     return (
-        <section className="bg-bgColor min-h-screen p-8">
+        <section className="bg-white min-h-screen p-8">
             <div className="max-w-6xl mx-auto text-center lg:mt-32 mt-16">
                 <h1 className="text-4xl font-extrabold text-primary mb-6">FitGuru에 오신 걸 환영해요! 🎉</h1>
                 <p className="text-lg text-textColor mb-12">
@@ -57,7 +57,7 @@ const Overview = () => {
                     <p className="text-textColor mb-6">FitGuru와 함께라면 건강한 습관 만들기, 어렵지 않아요!</p>
                     <button
                         onClick={() => navigate('/contact')} // Contact 페이지로 이동
-                        className="bg-gradient-to-r from-primary to-accent hover:from-blue-600 hover:to-green-600 text-bgColor font-semibold py-3 px-8 rounded-lg shadow-md transform hover:scale-105 transition-transform"
+                        className="bg-gradient-to-r from-primary to-accent hover:from-blue-600 hover:to-green-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transform hover:scale-105 transition-transform"
                     >
                         시작하기 🚀
                     </button>
