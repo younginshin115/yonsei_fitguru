@@ -3,7 +3,7 @@ import WorkoutModal from "./WorkoutModal";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const WorkoutActions = () => {
+const WorkoutActions = ({ setCurrentDate }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleSave = (data) => {
@@ -13,6 +13,7 @@ const WorkoutActions = () => {
             .get(`${addrScript}?action=insert&table=workout-history&data=${encodeURIComponent(JSON.stringify(data))}`)
             .then((response) => {
                 console.log("Workout data sent successfully:", response.data);
+                setCurrentDate(new Date())
                 toast.success("운동 기록이 저장되었습니다!"); // 성공 메시지 Toast 표시
             })
             .catch((error) => {
