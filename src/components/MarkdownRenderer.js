@@ -5,9 +5,9 @@ import remarkGfm from "remark-gfm";
 const markdownStyles = {
     container: "p-8 rounded-lg text-left",
     heading: "text-lg font-bold text-primary",
-    paragraph: "text-sm text-gray-700 mt-4 leading-relaxed",
+    paragraph: "text-gray-700 mt-4 leading-relaxed",
     list: "list-disc list-inside ml-8",
-    listItem: "text-sm text-gray-700 m-2",
+    listItem: "text-gray-700 m-2",
     emphasis: "font-semibold",
     strong: "font-bold text-gray-800",
 };

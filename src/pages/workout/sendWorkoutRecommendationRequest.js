@@ -30,14 +30,14 @@ const sendWorkoutRecommendationRequest = async (workoutHistory) => {
 
 const generateInputMessage = (workoutHistory) => {
     if (!workoutHistory || workoutHistory.length === 0) {
-        return "운동 추천 부탁드려요. 아직 운동 기록이 없습니다.";
+        return "운동 추천 부탁드려요. 이번주에는 아직 운동 기록이 없습니다. 적절한 이모지를 추가해주세요. 호칭은 회원님으로 해주세요.";
     }
 
     const formattedHistory = workoutHistory.map(
         (record) => `- ${record.date.split("T")[0]}: ${record.workout_type}, ${record.exercise_name}, ${record.weight}kg`
     ).join(" ");
 
-    return `운동 추천 부탁드려요. 지난주 운동 기록:\n${formattedHistory}`;
+    return `운동 추천 부탁드려요.  적절한 이모지를 추가해주세요. 호칭은 회원님으로 해주세요. 지난주 운동 기록:\n${formattedHistory}`;
 };
 
 export default sendWorkoutRecommendationRequest;
