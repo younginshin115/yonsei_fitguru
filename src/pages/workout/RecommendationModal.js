@@ -58,7 +58,7 @@ const RecommendationModal = ({ currentDate, isOpen, onClose }) => {
         };
 
         if (isOpen) fetchRecommendations();
-    }, [isOpen]);
+    }, [isOpen, currentDate]);
 
     return (
         isOpen && (
