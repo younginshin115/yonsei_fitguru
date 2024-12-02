@@ -10,7 +10,7 @@ const Workout = () => {
         <section className="bg-white min-h-screen p-8">
             <div className="max-w-6xl mx-auto text-center lg:mt-24 mt-16">
                 <WeekSelector currentDate={currentDate} setCurrentDate={setCurrentDate} />
-                <WorkoutActions setCurrentDate={setCurrentDate} />
+                <WorkoutActions currentDate={currentDate} setCurrentDate={setCurrentDate} />
                 <WeeklyDataFetcher currentDate={currentDate} />
             </div>
         </section>
