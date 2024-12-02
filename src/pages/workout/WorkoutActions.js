@@ -26,7 +26,7 @@ const WorkoutActions = ({ currentDate, setCurrentDate }) => {
 
     return (
         <div>
-            <div className="grid grid-cols-2 gap-6 mt-8">
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
                 {/* 운동 기록하기 버튼 */}
                 <button
                     className="flex items-center justify-center p-6 bg-white shadow-lg rounded-lg hover:scale-105 transition-transform border border-primary"

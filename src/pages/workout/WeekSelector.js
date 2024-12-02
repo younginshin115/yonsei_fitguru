@@ -28,7 +28,7 @@ const WeekSelector = ({ currentDate, setCurrentDate }) => {
     const handleWeeklyView = () => setView('weekly');
 
     return (
-        <section className="flex justify-between bg-white">
+        <section className="md:flex justify-between bg-white">
             {/* Toast Container */}
             <Toaster />
 
