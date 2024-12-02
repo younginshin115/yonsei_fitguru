@@ -10,53 +10,53 @@ const RecommendationModal = ({ currentDate, isOpen, onClose }) => {
     const [loading, setLoading] = useState(false);
     const [recommendations, setRecommendations] = useState("");
 
-    const fetchRecommendations = async () => {
-        setLoading(true);
-
-        const addrScript = process.env.REACT_APP_ADDR_SCRIPT;
-
-        // 현재 날짜 기반으로 주간 범위 계산
-        const startDate = new Date(startOfWeek(currentDate, { weekStartsOn: 1 }));
-        const endDate = new Date(endOfWeek(currentDate, { weekStartsOn: 1 }));
-
-        try {
-            const userId = getUVfromCookie();
-
-            const response = await axios.get(
-                `${addrScript}?action=read&table=workout-history`, { maxRedirects: 5 }
-            );
-
-            const jsonpResponse = response.data;
-            const jsonStart = jsonpResponse.indexOf("(") + 1;
-            const jsonEnd = jsonpResponse.lastIndexOf(")");
-            const jsonData = JSON.parse(jsonpResponse.substring(jsonStart, jsonEnd));
-
-            if (jsonData.success) {
-                const workoutHistory = jsonData.data.filter((e) => {
-                    const recordDate = new Date(e.date); // ISO 날짜를 Date 객체로 변환
-                    return (
-                        e.id === userId &&
-                        recordDate >= startDate && recordDate <= endDate
-                    );
-                });
-                const recommendations = await sendWorkoutRecommendationRequest(workoutHistory);
-
-                if (recommendations) {
-                    setRecommendations(recommendations);
-                    // 모달에 추천 결과 표시
-                }
-            } else {
-                toast.error("운동 기록을 가져오지 못했습니다.");
-            }
-        } catch (error) {
-            console.error("Error fetching recommendations:", error);
-            toast.error("운동 추천을 받는 중 오류가 발생했습니다.");
-        } finally {
-            setLoading(false);
-        }
-    };
-
     useEffect(() => {
+        const fetchRecommendations = async () => {
+            setLoading(true);
+
+            const addrScript = process.env.REACT_APP_ADDR_SCRIPT;
+
+            // 현재 날짜 기반으로 주간 범위 계산
+            const startDate = new Date(startOfWeek(currentDate, { weekStartsOn: 1 }));
+            const endDate = new Date(endOfWeek(currentDate, { weekStartsOn: 1 }));
+
+            try {
+                const userId = getUVfromCookie();
+
+                const response = await axios.get(
+                    `${addrScript}?action=read&table=workout-history`, { maxRedirects: 5 }
+                );
+
+                const jsonpResponse = response.data;
+                const jsonStart = jsonpResponse.indexOf("(") + 1;
+                const jsonEnd = jsonpResponse.lastIndexOf(")");
+                const jsonData = JSON.parse(jsonpResponse.substring(jsonStart, jsonEnd));
+
+                if (jsonData.success) {
+                    const workoutHistory = jsonData.data.filter((e) => {
+                        const recordDate = new Date(e.date); // ISO 날짜를 Date 객체로 변환
+                        return (
+                            e.id === userId &&
+                            recordDate >= startDate && recordDate <= endDate
+                        );
+                    });
+                    const recommendations = await sendWorkoutRecommendationRequest(workoutHistory);
+
+                    if (recommendations) {
+                        setRecommendations(recommendations);
+                        // 모달에 추천 결과 표시
+                    }
+                } else {
+                    toast.error("운동 기록을 가져오지 못했습니다.");
+                }
+            } catch (error) {
+                console.error("Error fetching recommendations:", error);
+                toast.error("운동 추천을 받는 중 오류가 발생했습니다.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
         if (isOpen) fetchRecommendations();
     }, [isOpen]);
 
